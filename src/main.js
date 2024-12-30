@@ -124,7 +124,6 @@ function drawVisibleArea() {
  
   ctx.closePath();
  
-  // Use your original light gradient
   ctx.fillStyle = createLightGradient();
   ctx.fill();
 }
