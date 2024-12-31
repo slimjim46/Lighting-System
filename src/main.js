@@ -1,7 +1,6 @@
 const canvas = document.getElementById('lightCanvas');
 const ctx = canvas.getContext('2d');
 
-// Debug mode constants
 let DEBUG_MODE = false;
 const DEBUG_RAYS = 360;
 
@@ -146,14 +145,12 @@ function drawScene() {
       const rayEndX = mouseX + Math.cos(angle) * LIGHT_RADIUS;
       const rayEndY = mouseY + Math.sin(angle) * LIGHT_RADIUS;
       
-      // Draw ray line
       ctx.beginPath();
       ctx.moveTo(mouseX, mouseY);
       ctx.lineTo(rayEndX, rayEndY);
       ctx.strokeStyle = 'rgba(255, 0, 0, 0.2)';
       ctx.stroke();
       
-      // Draw intersection points
       const intersection = castRay(angle);
       if (intersection) {
         ctx.beginPath();
@@ -163,7 +160,6 @@ function drawScene() {
       }
     }
 
-    // Draw light radius circle
     ctx.beginPath();
     ctx.arc(mouseX, mouseY, LIGHT_RADIUS, 0, Math.PI * 2);
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
